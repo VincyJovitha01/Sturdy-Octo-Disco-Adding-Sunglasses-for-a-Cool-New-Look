@@ -59,19 +59,24 @@ plt.imshow(glassPNG[:,:,::-1]);plt.title("glassPNG")
 glassPNG = cv2.resize(glassPNG,(550,400))
 print("image Dimension ={}".format(glassPNG.shape))
 ```
+
 <img width="290" height="23" alt="image" src="https://github.com/user-attachments/assets/d61fcc79-7839-42e6-9c64-c68204f49dc2" />
+
 ```
 # Separate the Color and alpha channels
 glassBGR = glassPNG[:,:,0:3]
 glassMask1 = glassPNG[:,:,3]
 ```
+
 ```
 # Display the images for clarity
 plt.figure(figsize=[15,15])
 plt.subplot(121);plt.imshow(glassBGR[:,:,::-1]);plt.title('Sunglass Color channels');
 plt.subplot(122);plt.imshow(glassMask1,cmap='gray');plt.title('Sunglass Alpha channel');
 ```
+
 <img width="1208" height="341" alt="image" src="https://github.com/user-attachments/assets/4f068db6-62e6-4b5d-8cc1-c3b5e59cc87a" />
+
 ```
 # Make a copy
 #faceWithGlassesNaive = resized_faceImage.copy()
@@ -82,6 +87,7 @@ faceWithGlassesNaive[400:800, 350:900]=glassBGR
 
 plt.imshow(faceWithGlassesNaive[...,::-1])
 ```
+
 ```
 glassMask = cv2.merge((glassMask1,glassMask1,glassMask1))
 glassMask = np.uint8(glassMask/255)
@@ -95,11 +101,14 @@ plt.subplot(131);plt.imshow(maskedEye[...,::-1]);plt.title("Masked Eye Region")
 plt.subplot(132);plt.imshow(maskedGlass[...,::-1]);plt.title("Masked Sunglass Region")
 plt.subplot(133);plt.imshow(eyeRoiFinal[...,::-1]);plt.title("Augmented Eye and Sunglass")
 ```
+
 <img width="1229" height="331" alt="image" src="https://github.com/user-attachments/assets/c99d17cb-5e99-4364-8b79-dfc06c61b2a5" />
+
 ```
 faceWithGlassesArithmetic[400:800, 350:900]=eyeRoiFinal
 plt.figure(figsize=[20,20]);
 plt.subplot(121);plt.imshow(faceImage[:,:,::-1]); plt.title("Original Image");
 plt.subplot(122);plt.imshow(faceWithGlassesArithmetic[:,:,::-1]);plt.title("With Sunglasses");
 ```
+
 <img width="453" height="298" alt="image" src="https://github.com/user-attachments/assets/93ca7285-e053-4fbe-b9a6-b0fe1101d60f" />
