@@ -26,8 +26,8 @@ Welcome to Sturdy Octo Disco, a fun and creative project designed to overlay sun
 - Practicing computer vision workflows.
 
 ## Program:
-Developed By: VINCY JOVITHA V
-Register no: 212223230242
+#### Developed By: VINCY JOVITHA V
+#### Register no: 212223230242
 ```
 # Import libraries and Load the Face Image
 import cv2
@@ -37,18 +37,23 @@ faceImage = cv2.imread('photo.JPG')
 plt.imshow(faceImage[:,:,::-1]);plt.title("Face")
 ```
 <img width="543" height="582" alt="image" src="https://github.com/user-attachments/assets/a79d5803-6d82-46d1-837b-c8636c8e6a15" />
+
 ```
 #resized_faceImage.shape
 faceImage.shape
 ```
+
 <img width="179" height="44" alt="image" src="https://github.com/user-attachments/assets/b959ae6f-7a3a-44c7-a36e-81ff590959dc" />
+
 ```
 # Load the Sunglass image with Alpha channel
 # (http://pluspng.com/sunglass-png-1104.html)
 glassPNG = cv2.imread('glasss.png',-1)
 plt.imshow(glassPNG[:,:,::-1]);plt.title("glassPNG")
 ```
+
 <img width="781" height="522" alt="image" src="https://github.com/user-attachments/assets/939c67b3-dc19-4a5b-b6b1-d9375b60c92d" />
+
 ```
 # Resize the image to fit over the eye region
 glassPNG = cv2.resize(glassPNG,(550,400))
