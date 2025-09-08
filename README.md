@@ -26,6 +26,8 @@ Welcome to Sturdy Octo Disco, a fun and creative project designed to overlay sun
 - Practicing computer vision workflows.
 
 ## Program:
+Developed By: VINCY JOVITHA V
+Register no: 212223230242
 ```
 # Import libraries and Load the Face Image
 import cv2
